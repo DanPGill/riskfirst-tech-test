@@ -31,3 +31,14 @@
   width: 20px;
   height: 20px;
 }
+
+.Date {
+ display: flex;
+ flex-direction: row;
+}
+
+.ReminderContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

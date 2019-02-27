@@ -1,6 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 import OverflowScrolling from 'react-overflow-scrolling'
+import classNames from 'classnames'
 import './style.css'
 
 const AddReminder = props => {
@@ -17,19 +18,19 @@ const AddReminder = props => {
 export default props => {
   return (
     <div className={'Day'}>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div className={'Date'}>
         <div>{props.day}</div>
         <AddReminder day={props.day} onClick={props.addReminder} />
       </div>
       <OverflowScrolling className={'Overflow-Scrolling'}>
         {_.map(props.reminders, reminder => {
           return (
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+            <div className={'ReminderContainer'}>
               <div className={'Text'} style={{ backgroundColor: reminder.colour }}>
                 {reminder.time} - {reminder.text}
               </div>
               <img
-                onClick={() => props.updateReminder(reminder)}
+                onClick={() => props.editReminder(reminder)}
                 src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfunedVTSE_BE40YNg0j2_83D7NqBNd6rARMbYLhl_bzwQB8OU'}
                 className={'UpdateReminder'}
               />
