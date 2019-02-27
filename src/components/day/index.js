@@ -1,7 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
 import OverflowScrolling from 'react-overflow-scrolling'
-import classNames from 'classnames'
 import './style.css'
 
 const AddReminder = props => {
