@@ -1,0 +1,23 @@
+.Form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.Input {
+  padding: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  border-color: black;
+  border-width: 1px;
+  width: 175px;
+}
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+}
+.Button {
+  width: 100px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
