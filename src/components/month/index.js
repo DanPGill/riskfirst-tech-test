@@ -6,6 +6,8 @@ import DaysOfWeek from '../daysOfWeek'
 import './style.css'
 
 const filterRemindersForDayOfMonth = (dayOfMonth, reminders, month) => _.filter(reminders, reminder => reminder.day === dayOfMonth && reminder.month === month)
+const sortRemindersByTime = (reminders) => _.sortBy(reminders, reminder => reminder.time)
+
 
 export default props => {
   const daysOfMonth = _.range(1, props.numberOfDaysInMonth + 1, 1)
@@ -25,7 +27,7 @@ export default props => {
                     key={index}
                     addReminder={() => props.addReminder(dayOfMonth)}
                     editReminder={props.editReminder}
-                    reminders={filterRemindersForDayOfMonth(dayOfMonth, props.reminders, props.month)}
+                    reminders={sortRemindersByTime(filterRemindersForDayOfMonth(dayOfMonth, props.reminders, props.month))}
                   />
                 )
               })}

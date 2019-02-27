@@ -10,7 +10,7 @@ const initialState = {
 
 const updateReminders = (reminders, reminderToUpdate, currentReminder) => {
   return _.map(reminders, reminder => {
-    if (reminder.day === reminderToUpdate.day && reminder.month === reminderToUpdate.month && reminder.time) {
+    if (reminder.day === reminderToUpdate.day && reminder.month === reminderToUpdate.month && reminder.time === reminderToUpdate.time) {
       return currentReminder
     }
     return reminder
