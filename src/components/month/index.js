@@ -5,11 +5,12 @@ import AddOrUpdateReminder from '../addOrUpdateReminder'
 import DaysOfWeek from '../daysOfWeek'
 import './style.css'
 
+const filterRemindersForDayOfMonth = (dayOfMonth, reminders, month) => _.filter(reminders, reminder => reminder.day === dayOfMonth && reminder.month === month)
+
 export default props => {
   const daysOfMonth = _.range(1, props.numberOfDaysInMonth + 1, 1)
   const daysOfMonthWithEmpty = [..._.times(props.firstDayOfMonth - 1, () => ''), ...daysOfMonth, ..._.times(7 - props.lastDayOfMonth, () => '')]
   const weeksOfMonth = _.chunk(daysOfMonthWithEmpty, 7)
-  const filterRemindersForDayOfMonth = dayOfMonth => _.filter(props.reminders, reminder => reminder.day === dayOfMonth && reminder.month === props.month)
   if (!props.displayForm) {
     return (
       <div>
@@ -23,8 +24,8 @@ export default props => {
                     day={dayOfMonth}
                     key={index}
                     addReminder={() => props.addReminder(dayOfMonth)}
-                    updateReminder={props.updateReminder}
-                    reminders={filterRemindersForDayOfMonth(dayOfMonth)}
+                    editReminder={props.editReminder}
+                    reminders={filterRemindersForDayOfMonth(dayOfMonth, props.reminders, props.month)}
                   />
                 )
               })}

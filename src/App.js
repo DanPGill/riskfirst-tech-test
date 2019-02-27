@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import Calendar from './containers/calendar'
-import store from './redux/reducers/store'
+import store from './redux/store'
 import './App.css'
 
 class App extends Component {

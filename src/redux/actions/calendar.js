@@ -1,11 +1,7 @@
 import _ from 'lodash'
 
-export const updateReminderDay = day => {
-  return { type: 'calendar/UPDATE_REMINDER_DAY', payload: day }
-}
-
-export const toggleReminderForm = () => {
-  return { type: 'calendar/TOGGLE_REMINDER_FORM' }
+export const updateCurrentReminderForSelectedDay = day => {
+  return { type: 'calendar/UPDATE_CURRENT_REMINDER_FOR_SELECTED_DAY', payload: day }
 }
 
 export const updateReminderText = reminderText => {
@@ -27,13 +23,10 @@ export const submitReminder = (reminders, reminder) => {
   return { type: 'calendar/UPDATE_REMINDER', payload: reminder }
 }
 
-export const setCurrentReminder = reminder => {
-  return { type: 'calendar/SET_CURRENT_REMINDER', payload: reminder }
+export const editReminder = reminder => {
+  return { type: 'calendar/EDIT_REMINDER', payload: reminder }
 }
 
-export const clearCurrentReminder = () => {
-  return { type: 'calendar/CLEAR_CURRENT_REMINDER' }
-}
 
 export const removeReminder = () => {
   return { type: 'calendar/REMOVE_REMINDER' }
