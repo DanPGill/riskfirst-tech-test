@@ -33,7 +33,6 @@ class Calendar extends Component {
     this.props.dispatch(toggleReminderForm())
   }
   render() {
-    console.log(this.props)
     return (
       <div>
         <Month
